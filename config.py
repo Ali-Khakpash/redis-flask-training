@@ -14,7 +14,7 @@ class Config:
 
 class DevelopmentConfig(Config):
       DEBUG = True
-    # REDIS_URL = 'redis://localhost:6379/0'
+      REDIS_URL = 'redis://localhost:6379/0'
 
 
 class TestingConfig(Config):

@@ -1,7 +1,8 @@
 from flask import Flask
 from config import config 
 from db import redis_client
-# from db import db
+from routes.register import user_register
+
 
 app = Flask(__name__)
 
@@ -13,9 +14,10 @@ def create_app(config_name):
     # with app.app_context():
     # db.create_all() #creats all table from model class 
     # attach routes and custom error pages here
-    @app.route('/')
-    def index():
-        redis_client.set('bb','ccc')
+    app.register_blueprint(user_register)
+    # @app.route('/')
+    # def index():
+    #     redis_client.set('bb','ccc')
     return app
 
 
